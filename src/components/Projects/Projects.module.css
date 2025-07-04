@@ -1,0 +1,178 @@
+.projects {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--color-text);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background: rgba(38, 38, 38, 0.3);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cardContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.cardDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0;
+  flex: 1;
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techTag {
+  background: rgba(240, 154, 26, 0.1);
+  border: 1px solid rgba(240, 154, 26, 0.3);
+  color: var(--color-accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.link {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.link:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.linkSecondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.linkSecondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) {
+  .projects {
+    padding: 4rem 0;
+  }
+  
+  .header {
+    margin-bottom: 3rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects {
+    padding: 3rem 0;
+  }
+  
+  .header {
+    margin-bottom: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .cardContent {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  .links {
+    flex-direction: column;
+  }
+  
+  .link,
+  .linkSecondary {
+    text-align: center;
+  }
+} 
