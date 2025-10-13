@@ -1,3 +1,5 @@
+import React from 'react';
+import styles from './Contact.module.css';
 
 interface ContactProps {
   className?: string;
