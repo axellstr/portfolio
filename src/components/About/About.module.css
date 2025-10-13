@@ -1,0 +1,705 @@
+/* Vinci SVG inside Fun Fact Card */
+.funFactCard {
+  grid-column: 3 / 5;
+  grid-row: 3;
+  background: linear-gradient(135deg, var(--color-accent), #ff6b6b);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.funFactContent {
+  flex: 1;
+  z-index: 2;
+  position: relative;
+}
+
+.vinciInCard {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-24%) translateX(35%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.vinciSvg {
+  width: 400px;
+  height: 400px;
+  transition: filter 0.3s ease, opacity 0.3s ease, mix-blend-mode 0.3s ease;
+}
+
+.funFactCard:hover .vinciInCard {
+  transform: translateY(-24%) translateX(35%) rotate(5deg) scale(1.1);
+}
+
+
+.container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 4rem;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  min-height: 70vh;
+  position: relative;
+}
+
+.bentoBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 1.5rem;
+  height: 100%;
+  
+}
+
+/* Main Profile Card - spans 2x2 */
+.profileCard {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Profile Content Container - Professional Layout */
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Text Content - Professional Structure */
+.profileTextColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  padding: 1rem;
+}
+
+.profileHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Profile Title Row with Avatar */
+.profileTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Profile Avatar */
+.profileAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  transform: scaleX(-1);
+}
+
+
+
+
+.profileTitle {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.profileSubtitle {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Profile Body */
+.profileBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+
+}
+
+.profileDescription {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* Profile Highlights */
+.profileHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.highlight:last-child {
+  border-bottom: none;
+}
+
+.highlightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(254, 127, 45, 0.1);
+  border-radius: 8px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.highlight span {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* Profile Footer */
+.profileFooter {
+  margin-top: auto;
+}
+
+.profileActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+
+
+/* CV Button Styles - Secondary Button */
+.cvButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+
+.cvButton:active {
+  transform: translateY(0);
+}
+
+.cvIcon {
+  transition: transform 0.2s ease;
+}
+
+.cvButton:hover .cvIcon {
+  transform: scale(1.1);
+}
+
+
+/* Skills Card */
+.skillsCard {
+  grid-column: 3 / 5;
+  grid-row: 1;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Experience Card */
+.experienceCard {
+  grid-column: 3;
+  grid-row: 2;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Languages Card */
+.languagesCard {
+  grid-column: 4;
+  grid-row: 2;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Currently Learning Card */
+.learningCard {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+/* Common Card Styles */
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--color-text);
+}
+
+.funFactCard .cardTitle {
+  color: var(--color-bg);
+}
+
+/* Carousel Container */
+.carouselContainer {
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.carouselTrack {
+  display: inline-flex;
+  animation: scroll 20s linear infinite;
+  gap: 1rem;
+}
+
+
+/* Keyframe animation for infinite scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Skill Item */
+.skillItem {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1rem 0.75rem;
+  min-width: 100px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+
+.skillIcon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+/* GitHub icon specific styling for light mode */
+[data-theme="light"] .skillIcon[alt="GitHub"] {
+  filter: brightness(0) saturate(100%) invert(0);
+}
+
+/* GitHub icon hover effect for light mode */
+[data-theme="light"] .skillItem:hover .skillIcon[alt="GitHub"] {
+  filter: brightness(0.3) saturate(100%) invert(0);
+}
+
+.skillItem:hover .skillIcon {
+  filter: brightness(1.3);
+}
+
+/* Ensure other icons still get hover effect in light mode */
+[data-theme="light"] .skillItem:hover .skillIcon:not([alt="GitHub"]) {
+  filter: brightness(1.3);
+}
+
+.skillName {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: center;
+  line-height: 1.2;
+}
+
+
+/* Experience List */
+.experienceList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.experienceItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height:80px
+}
+
+.experienceNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.experienceLabel {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  word-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
+}
+
+/* Languages List */
+.languagesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.language {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.5rem 0.4rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.language:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Learning List */
+.learningList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.learningItem {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.learningItem:hover {
+  transform: scale(1.05);
+}
+
+/* Fun Fact Text */
+.funFactText {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--color-bg);
+}
+
+/* Tablet responsive - keep desktop layout but adjust container */
+@media (max-width: 1200px) {
+  .container {
+    padding: 2rem;
+  }
+  
+  .vinciInCard {
+    top: 50%;
+    right: -40px;
+    transform: translateY(-31%) translateX(18%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+  }
+  
+  .vinciSvg {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Mobile responsive - single column layout */
+@media (max-width: 768px) {
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .bentoBox {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  
+  .vinciInCard {
+    top: 50%;
+    right: -30px;
+    transform: translateY(-31%) translateX(15%);
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+  }
+  
+  .vinciSvg {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .profileTitle {
+    font-size: 2rem;
+  }
+  
+  .profileCard,
+  .skillsCard,
+  .experienceCard,
+  .funFactCard {
+    grid-column: unset;
+    grid-row: unset;
+    width: 100%;
+  }
+
+  /* Profile Card Mobile Layout */
+  .profileTitleRow {
+    gap: 0.75rem;
+  }
+
+  .profileAvatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profileTitle {
+    font-size: 1.8rem;
+  }
+
+  .profileHighlights {
+    gap: 0.5rem;
+  }
+
+  .highlight {
+    padding: 0.4rem 0;
+  }
+
+  .highlightIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .profileActions {
+    justify-content: flex-end;
+  }
+
+  .cvButton {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .funFactCard {
+    min-height: 120px;
+    padding: 1rem;
+  }
+  
+  .funFactContent {
+    flex: 1;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .funFactNumber {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .funFactLabel {
+    font-size: 0.9rem;
+  }
+  
+  .skillsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .skillItem {
+    padding: 0.5rem;
+  }
+  
+  .skillIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .skillName {
+    font-size: 0.75rem;
+  }
+  
+  .experienceItem {
+    padding: 1rem;
+  }
+  
+  .experienceTitle {
+    font-size: 1rem;
+  }
+  
+  .experienceCompany {
+    font-size: 0.8rem;
+  }
+  
+  .experienceDate {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  
+  .profileTextColumn {
+    padding: 0.25rem;
+  }
+
+  .vinciInCard {
+    right: -45px;
+    opacity: 1;
+  }
+  
+  .vinciSvg {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .profileCard,
+  .skillsCard,
+  .experienceCard,
+  .languagesCard,
+  .learningCard,
+  .funFactCard {
+    padding: 1rem;
+  }
+  
+  .profileTitleRow {
+    gap: 0.5rem;
+  }
+
+  .profileAvatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profileTitle {
+    font-size: 1.6rem;
+  }
+  .profileSubtitle {
+    font-size: 1rem;
+  }
+  .profileDescription {
+    font-size: 1rem;
+  }
+
+  .profileHighlights {
+    gap: 0.4rem;
+  }
+
+  .highlight {
+    padding: 0.3rem 0;
+  }
+
+  .highlightIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .highlight span {
+    font-size: 0.8rem;
+  }
+
+  .cvButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+  
+  /* Small mobile carousel adjustments */
+  .carouselTrack {
+    animation: scroll 30s linear infinite;
+    gap: 0.5rem;
+  }
+  
+  .carouselTrack:hover {
+    animation-play-state: paused;
+  }
+  
+  .skillItem {
+    min-width: 60px;
+    padding: 0.5rem 0.375rem;
+  }
+  
+  .skillIcon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 0.25rem;
+  }
+  
+  .skillName {
+    font-size: 0.65rem;
+  }
+} 

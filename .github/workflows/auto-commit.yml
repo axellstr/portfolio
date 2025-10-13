@@ -1,0 +1,54 @@
+name: Auto Commit Speedrun
+on:
+  schedule:
+    # Runs once a day at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allows manual triggering
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+        
+    - name: Configure Git
+      run: |
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        
+    - name: Create speedrun checkpoint
+      run: |
+        timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+        
+        # Pull latest changes first
+        git pull origin main || echo "Pull failed, continuing..."
+        
+        # Create/update checkpoint file in the repository root
+        echo "Speedrun checkpoint: $timestamp" > speedrun_checkpoint.txt
+        echo "Commit #$(git rev-list --count HEAD)" >> speedrun_checkpoint.txt
+        echo "Repository: ${{ github.repository }}" >> speedrun_checkpoint.txt
+        echo "Actor: ${{ github.actor }}" >> speedrun_checkpoint.txt
+        
+        # Add the changes
+        git add speedrun_checkpoint.txt
+        
+        # Check if there are any changes to commit
+        if git diff --staged --quiet; then
+          # No changes, create empty commit
+          git commit --allow-empty -m "🏃 Speedrun checkpoint: $timestamp (no changes)"
+        else
+          # Changes exist, commit them
+          git commit -m "🏃 Speedrun checkpoint: $timestamp"
+        fi
+        
+        # Push changes (retry once if it fails)
+        git push origin main || {
+          echo "Push failed, pulling and retrying..."
+          git pull --rebase origin main
+          git push origin main
+        }
