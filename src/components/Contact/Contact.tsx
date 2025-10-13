@@ -1,4 +1,3 @@
-import styles from './Contact.module.css';
 
 interface ContactProps {
   className?: string;
