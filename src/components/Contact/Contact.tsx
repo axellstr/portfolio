@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import styles from './Contact.module.css';
 
@@ -31,6 +32,37 @@ const XIcon = () => (
 );
 
 export default function Contact({ className }: ContactProps) {
+  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'sending' | 'sent'>('idle');
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get('name') || ''),
+      email: String(formData.get('email') || ''),
+      subject: String(formData.get('subject') || ''),
+      message: String(formData.get('message') || ''),
+    };
+
+    try {
+      setSubmitStatus('sending');
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setSubmitStatus('idle');
+        return; // Keep silent per request
+      }
+      setSubmitStatus('sent');
+      form.reset();
+    } catch (err) {
+      setSubmitStatus('idle'); // Keep silent per request
+    }
+  }
+
   return (
     <section className={`${styles.contact} ${className || ''}`} id="contact">
       <div className={styles.container}>
@@ -40,7 +72,7 @@ export default function Contact({ className }: ContactProps) {
         
         <div className={styles.content}>
           <div className={styles.formSection}>
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
                 <label htmlFor="name" className={styles.label}>Name</label>
                 <input 
@@ -85,8 +117,8 @@ export default function Contact({ className }: ContactProps) {
                 ></textarea>
               </div>
               
-              <button type="submit" className={styles.submitButton}>
-                Send Message
+              <button type="submit" className={styles.submitButton} disabled={submitStatus !== 'idle'}>
+                {submitStatus === 'sent' ? 'Sent ✓' : submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
