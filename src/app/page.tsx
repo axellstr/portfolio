@@ -1,11 +1,12 @@
 import { Metadata } from "next";
-import Hero from "../components/Hero";
 import About from "../components/About";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Soteriou | Webfolio",
   description: "Full-Stack Developer & Designer creating beautiful, scalable digital experiences with React, Next.js, and TypeScript.",
   openGraph: {
     title: "Alexandros Soteriou - Full-Stack Developer & Designer",
@@ -62,10 +63,12 @@ export default function Home() {
         }}
       />
       <main>
-        <Hero />
+        <Header />
         <About />
         <Projects />
         <Contact />
+        <Footer />
+
       </main>
     </>
   );

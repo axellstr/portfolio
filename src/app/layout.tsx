@@ -2,8 +2,7 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { ThemeProvider } from "../contexts/ThemeContext";
 
 // Optimize ClashDisplay font loading
 const clashDisplay = localFont({
@@ -121,9 +120,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={clashDisplay.variable}>
       <body className={clashDisplay.className}>
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

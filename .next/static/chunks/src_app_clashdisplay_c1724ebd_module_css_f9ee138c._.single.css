@@ -1,0 +1,67 @@
+/* [project]/src/app/clashdisplay_c1724ebd.module.css [app-client] (css) */
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Extralight-s.p.ff2b207b.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Light-s.p.e6f4cac0.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Regular-s.p.0f5b7284.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Medium-s.p.f5e8df29.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Semibold-s.p.9d38bd3a.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Bold-s.p.9bae96ce.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay Fallback;
+  src: local(Arial);
+  ascent-override: 83.42%;
+  descent-override: 23.43%;
+  line-gap-override: 8.44%;
+  size-adjust: 106.69%;
+}
+
+.clashdisplay_c1724ebd-module__l_MtEG__className {
+  font-family: clashDisplay, clashDisplay Fallback;
+}
+
+.clashdisplay_c1724ebd-module__l_MtEG__variable {
+  --font-clash-display: "clashDisplay", "clashDisplay Fallback";
+}
+
+/*# sourceMappingURL=src_app_clashdisplay_c1724ebd_module_css_f9ee138c._.single.css.map*/

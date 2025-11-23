@@ -1,0 +1,190 @@
+/* [project]/src/app/clashdisplay_c1724ebd.module.css [app-client] (css) */
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Extralight-s.p.ff2b207b.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Light-s.p.e6f4cac0.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Regular-s.p.0f5b7284.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Medium-s.p.f5e8df29.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Semibold-s.p.9d38bd3a.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Bold-s.p.9bae96ce.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay Fallback;
+  src: local(Arial);
+  ascent-override: 83.42%;
+  descent-override: 23.43%;
+  line-gap-override: 8.44%;
+  size-adjust: 106.69%;
+}
+
+.clashdisplay_c1724ebd-module__l_MtEG__className {
+  font-family: clashDisplay, clashDisplay Fallback;
+}
+
+.clashdisplay_c1724ebd-module__l_MtEG__variable {
+  --font-clash-display: "clashDisplay", "clashDisplay Fallback";
+}
+
+
+/* [project]/src/app/globals.css [app-client] (css) */
+:root {
+  --color-bg: #0a0908;
+  --color-text: #f4f4f9;
+  --color-accent: #fe7f2d;
+  --color-muted: #a99985;
+  --color-border: #404040;
+  --font-primary: var(--font-clash-display), "Inter", sans-serif;
+  --pattern-bg: #1a1a1a;
+  --pattern-fill: % 23ffffff;
+  --pattern-opacity: .1;
+}
+
+[data-theme="light"] {
+  --color-bg: #f4fffd;
+  --color-text: #0a0908;
+  --color-accent: #fe7f2d;
+  --color-muted: #6b6b6b;
+  --color-border: #d0d0d0;
+  --pattern-bg: #f8f7fa;
+  --pattern-fill: % 23d4d1d8;
+  --pattern-opacity: .1;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0a0908;
+  --color-text: #f4f4f9;
+  --color-accent: #fe7f2d;
+  --color-muted: #a99985;
+  --color-border: #404040;
+  --pattern-bg: #1a1a1a;
+  --pattern-fill: % 23ffffff;
+  --pattern-opacity: .1;
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.1;
+}
+
+button {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-family: inherit;
+}
+
+button:hover {
+  opacity: .9;
+}
+
+main {
+  contain: layout style;
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+:root main, [data-theme="dark"] main, [data-theme="light"] main {
+  background-color: var(--color-bg);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/*# sourceMappingURL=src_app_307ecf2b._.css.map*/

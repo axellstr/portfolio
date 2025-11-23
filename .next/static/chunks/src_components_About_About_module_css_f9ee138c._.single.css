@@ -1,0 +1,641 @@
+/* [project]/src/components/About/About.module.css [app-client] (css) */
+.About-module__S-Ka5a__funFactCard {
+  background: linear-gradient(135deg, var(--color-accent), #ff6b6b);
+  border: 1px solid var(--color-border);
+  color: var(--color-bg);
+  border-radius: 16px;
+  grid-area: 3 / 3 / auto / 5;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.About-module__S-Ka5a__funFactContent {
+  z-index: 2;
+  flex: 1;
+  position: relative;
+}
+
+.About-module__S-Ka5a__vinciInCard {
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  transition: transform .3s ease-in-out;
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-24%)translateX(35%);
+}
+
+.About-module__S-Ka5a__vinciSvg {
+  width: 400px;
+  height: 400px;
+  transition: filter .3s, opacity .3s, mix-blend-mode .3s;
+}
+
+.About-module__S-Ka5a__funFactCard:hover .About-module__S-Ka5a__vinciInCard {
+  transform: translateY(-24%)translateX(35%)rotate(5deg)scale(1.1);
+}
+
+.About-module__S-Ka5a__container {
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  max-width: 1680px;
+  min-height: 70vh;
+  margin: 0 auto;
+  padding: 4rem;
+  position: relative;
+}
+
+.About-module__S-Ka5a__bentoBox {
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  height: 100%;
+  display: grid;
+}
+
+.About-module__S-Ka5a__profileCard {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  flex-direction: column;
+  grid-area: 1 / 1 / 3 / 3;
+  justify-content: space-between;
+  padding: 1rem;
+  display: flex;
+}
+
+.About-module__S-Ka5a__profileContent {
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 100%;
+  display: flex;
+}
+
+.About-module__S-Ka5a__profileTextColumn {
+  flex-direction: column;
+  flex: 1;
+  gap: 1.5rem;
+  padding: 1rem;
+  display: flex;
+}
+
+.About-module__S-Ka5a__profileHeader {
+  flex-direction: column;
+  gap: .75rem;
+  display: flex;
+}
+
+.About-module__S-Ka5a__profileTitleRow {
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.About-module__S-Ka5a__profileAvatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  transform: scaleX(-1);
+}
+
+.About-module__S-Ka5a__profileTitle {
+  color: var(--color-text);
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.About-module__S-Ka5a__profileSubtitle {
+  color: var(--color-accent);
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.About-module__S-Ka5a__profileBody {
+  flex-direction: column;
+  flex: 1;
+  gap: 1.25rem;
+  display: flex;
+}
+
+.About-module__S-Ka5a__profileDescription {
+  color: var(--color-muted);
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.About-module__S-Ka5a__profileHighlights {
+  flex-direction: column;
+  gap: .75rem;
+  display: flex;
+}
+
+.About-module__S-Ka5a__highlight {
+  border-bottom: 1px solid #ffffff0d;
+  align-items: center;
+  gap: .75rem;
+  padding: .5rem 0;
+  display: flex;
+}
+
+.About-module__S-Ka5a__highlight:last-child {
+  border-bottom: none;
+}
+
+.About-module__S-Ka5a__highlightIcon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-accent);
+  background: #fe7f2d1a;
+  border-radius: 8px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.About-module__S-Ka5a__highlight span {
+  color: var(--color-text);
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.About-module__S-Ka5a__profileFooter {
+  margin-top: auto;
+}
+
+.About-module__S-Ka5a__profileActions {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.About-module__S-Ka5a__cvButton {
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  background: none;
+  border-radius: 8px;
+  align-items: center;
+  gap: .5rem;
+  padding: .6rem 1.2rem;
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-flex;
+}
+
+.About-module__S-Ka5a__cvButton:active {
+  transform: translateY(0);
+}
+
+.About-module__S-Ka5a__cvIcon {
+  transition: transform .2s;
+}
+
+.About-module__S-Ka5a__cvButton:hover .About-module__S-Ka5a__cvIcon {
+  transform: scale(1.1);
+}
+
+.About-module__S-Ka5a__skillsCard {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  grid-area: 1 / 3 / auto / 5;
+  padding: 1.5rem;
+}
+
+.About-module__S-Ka5a__experienceCard {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  grid-area: 2 / 3;
+  padding: 1.5rem;
+}
+
+.About-module__S-Ka5a__languagesCard {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  grid-area: 2 / 4;
+  padding: 1.5rem;
+}
+
+.About-module__S-Ka5a__learningCard {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  grid-area: 3 / 1 / auto / 3;
+  padding: 1.5rem;
+}
+
+.About-module__S-Ka5a__cardTitle {
+  color: var(--color-text);
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.About-module__S-Ka5a__funFactCard .About-module__S-Ka5a__cardTitle {
+  color: var(--color-bg);
+}
+
+.About-module__S-Ka5a__carouselContainer {
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.About-module__S-Ka5a__carousel {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.About-module__S-Ka5a__carouselTrack {
+  gap: 1rem;
+  animation: 20s linear infinite About-module__S-Ka5a__scroll;
+  display: inline-flex;
+}
+
+@keyframes About-module__S-Ka5a__scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.About-module__S-Ka5a__skillItem {
+  white-space: nowrap;
+  background: #ffffff08;
+  border-radius: 12px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 100px;
+  padding: 1rem .75rem;
+  transition: all .3s;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.About-module__S-Ka5a__skillIcon {
+  filter: brightness(.9);
+  width: 32px;
+  height: 32px;
+  margin-bottom: .5rem;
+  transition: filter .3s;
+}
+
+[data-theme="light"] .About-module__S-Ka5a__skillIcon[alt="GitHub"] {
+  filter: brightness(0) saturate() invert(0);
+}
+
+[data-theme="light"] .About-module__S-Ka5a__skillItem:hover .About-module__S-Ka5a__skillIcon[alt="GitHub"] {
+  filter: brightness(.3) saturate() invert(0);
+}
+
+.About-module__S-Ka5a__skillItem:hover .About-module__S-Ka5a__skillIcon, [data-theme="light"] .About-module__S-Ka5a__skillItem:hover .About-module__S-Ka5a__skillIcon:not([alt="GitHub"]) {
+  filter: brightness(1.3);
+}
+
+.About-module__S-Ka5a__skillName {
+  color: var(--color-text);
+  text-align: center;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.About-module__S-Ka5a__experienceList {
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  display: grid;
+}
+
+.About-module__S-Ka5a__experienceItem {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  display: flex;
+}
+
+.About-module__S-Ka5a__experienceNumber {
+  color: var(--color-accent);
+  margin-bottom: .25rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.About-module__S-Ka5a__experienceLabel {
+  color: var(--color-muted);
+  word-wrap: break-word;
+  hyphens: auto;
+  font-size: .9rem;
+  line-height: 1.2;
+}
+
+.About-module__S-Ka5a__languagesList {
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem;
+  display: grid;
+}
+
+.About-module__S-Ka5a__language {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  padding: .5rem .4rem;
+  font-size: .9rem;
+  transition: background .2s;
+  display: flex;
+}
+
+.About-module__S-Ka5a__language:hover {
+  background: #ffffff26;
+}
+
+.About-module__S-Ka5a__learningList {
+  flex-wrap: wrap;
+  gap: .5rem;
+  display: flex;
+}
+
+.About-module__S-Ka5a__learningItem {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 8px;
+  padding: .4rem .8rem;
+  font-size: .85rem;
+  transition: transform .2s;
+}
+
+.About-module__S-Ka5a__learningItem:hover {
+  transform: scale(1.05);
+}
+
+.About-module__S-Ka5a__funFactText {
+  color: var(--color-bg);
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (width <= 1200px) {
+  .About-module__S-Ka5a__container {
+    padding: 2rem;
+  }
+
+  .About-module__S-Ka5a__vinciInCard {
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-31%)translateX(18%);
+  }
+
+  .About-module__S-Ka5a__vinciSvg {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (width <= 768px) {
+  .About-module__S-Ka5a__container {
+    padding: 1rem;
+  }
+
+  .About-module__S-Ka5a__bentoBox {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+    display: flex;
+  }
+
+  .About-module__S-Ka5a__vinciInCard {
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-31%)translateX(15%);
+  }
+
+  .About-module__S-Ka5a__vinciSvg {
+    width: 180px;
+    height: 180px;
+  }
+
+  .About-module__S-Ka5a__profileCard, .About-module__S-Ka5a__skillsCard, .About-module__S-Ka5a__experienceCard, .About-module__S-Ka5a__funFactCard {
+    grid-column: unset;
+    grid-row: unset;
+    width: 100%;
+  }
+
+  .About-module__S-Ka5a__profileTitleRow {
+    gap: .75rem;
+  }
+
+  .About-module__S-Ka5a__profileAvatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .About-module__S-Ka5a__profileTitle {
+    font-size: 1.8rem;
+  }
+
+  .About-module__S-Ka5a__profileHighlights {
+    gap: .5rem;
+  }
+
+  .About-module__S-Ka5a__highlight {
+    padding: .4rem 0;
+  }
+
+  .About-module__S-Ka5a__highlightIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .About-module__S-Ka5a__profileActions {
+    justify-content: flex-end;
+  }
+
+  .About-module__S-Ka5a__cvButton {
+    padding: .65rem 1.25rem;
+    font-size: .9rem;
+  }
+
+  .About-module__S-Ka5a__funFactCard {
+    min-height: 120px;
+    padding: 1rem;
+  }
+
+  .About-module__S-Ka5a__funFactContent {
+    z-index: 2;
+    flex: 1;
+    position: relative;
+  }
+
+  .About-module__S-Ka5a__funFactNumber {
+    margin-bottom: .5rem;
+    font-size: 2rem;
+  }
+
+  .About-module__S-Ka5a__funFactLabel {
+    font-size: .9rem;
+  }
+
+  .About-module__S-Ka5a__skillsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: .5rem;
+  }
+
+  .About-module__S-Ka5a__skillItem {
+    padding: .5rem;
+  }
+
+  .About-module__S-Ka5a__skillIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .About-module__S-Ka5a__skillName {
+    font-size: .75rem;
+  }
+
+  .About-module__S-Ka5a__experienceItem {
+    padding: 1rem;
+  }
+
+  .About-module__S-Ka5a__experienceTitle {
+    font-size: 1rem;
+  }
+
+  .About-module__S-Ka5a__experienceCompany {
+    font-size: .8rem;
+  }
+
+  .About-module__S-Ka5a__experienceDate {
+    font-size: .7rem;
+  }
+}
+
+@media (width <= 480px) {
+  .About-module__S-Ka5a__container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .About-module__S-Ka5a__profileTextColumn {
+    padding: .25rem;
+  }
+
+  .About-module__S-Ka5a__vinciInCard {
+    opacity: 1;
+    right: -45px;
+  }
+
+  .About-module__S-Ka5a__vinciSvg {
+    width: 200px;
+    height: 200px;
+  }
+
+  .About-module__S-Ka5a__profileCard, .About-module__S-Ka5a__skillsCard, .About-module__S-Ka5a__experienceCard, .About-module__S-Ka5a__languagesCard, .About-module__S-Ka5a__learningCard, .About-module__S-Ka5a__funFactCard {
+    padding: 1rem;
+  }
+
+  .About-module__S-Ka5a__profileTitleRow {
+    gap: .5rem;
+  }
+
+  .About-module__S-Ka5a__profileAvatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .About-module__S-Ka5a__profileTitle {
+    font-size: 1.6rem;
+  }
+
+  .About-module__S-Ka5a__profileSubtitle, .About-module__S-Ka5a__profileDescription {
+    font-size: 1rem;
+  }
+
+  .About-module__S-Ka5a__profileHighlights {
+    gap: .4rem;
+  }
+
+  .About-module__S-Ka5a__highlight {
+    padding: .3rem 0;
+  }
+
+  .About-module__S-Ka5a__highlightIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .About-module__S-Ka5a__highlight span {
+    font-size: .8rem;
+  }
+
+  .About-module__S-Ka5a__cvButton {
+    padding: .6rem 1rem;
+    font-size: .85rem;
+  }
+
+  .About-module__S-Ka5a__cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .About-module__S-Ka5a__carouselTrack {
+    gap: .5rem;
+    animation: 30s linear infinite About-module__S-Ka5a__scroll;
+  }
+
+  .About-module__S-Ka5a__carouselTrack:hover {
+    animation-play-state: paused;
+  }
+
+  .About-module__S-Ka5a__skillItem {
+    min-width: 60px;
+    padding: .5rem .375rem;
+  }
+
+  .About-module__S-Ka5a__skillIcon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: .25rem;
+  }
+
+  .About-module__S-Ka5a__skillName {
+    font-size: .65rem;
+  }
+}
+
+/*# sourceMappingURL=src_components_About_About_module_css_f9ee138c._.single.css.map*/

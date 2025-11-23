@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import ThemeToggle from '../ThemeToggle';
 import styles from './Header.module.css';
 
 interface HeaderProps {
@@ -33,6 +34,7 @@ export default function Header({ className }: HeaderProps) {
         </nav>
         
         <div className={styles.cta}>
+          <ThemeToggle className={styles.themeToggle} />
           <button className={styles.ctaButton}>
             Let&apos;s Talk
           </button>

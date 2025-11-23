@@ -1,10 +1,38 @@
+/* Dark theme (default) */
 :root {
   --color-bg: #0a0908;
   --color-text: #f4f4f9;
   --color-accent: #FE7F2D; 
   --color-muted: #a99985;
-  --color-border: #262626;
+  --color-border: #404040;
   --font-primary: var(--font-clash-display), 'Inter', sans-serif;
+  --pattern-bg: #1a1a1a;
+  --pattern-fill: %23ffffff;
+  --pattern-opacity: 0.1;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --color-bg: #F4FFFD;
+  --color-text: #0a0908;
+  --color-accent: #FE7F2D;
+  --color-muted: #6b6b6b;
+  --color-border: #d0d0d0;
+  --pattern-bg: #f8f7fa;
+  --pattern-fill: %23d4d1d8;
+  --pattern-opacity: 0.1;
+}
+
+/* Dark theme explicit */
+[data-theme="dark"] {
+  --color-bg: #0a0908;
+  --color-text: #f4f4f9;
+  --color-accent: #FE7F2D; 
+  --color-muted: #a99985;
+  --color-border: #404040;
+  --pattern-bg: #1a1a1a;
+  --pattern-fill: %23ffffff;
+  --pattern-opacity: 0.1;
 }
 
 html,
@@ -16,6 +44,7 @@ body {
   font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -83,8 +112,18 @@ main {
   width: 100%;
   padding: 0;
   margin: 0 auto;
-  border-left: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
+  contain: layout style;
+}
+
+/* Clean backgrounds without patterns */
+:root main,
+[data-theme="dark"] main {
+  background-color: var(--color-bg);
+}
+
+/* Light theme background */
+[data-theme="light"] main {
+  background-color: var(--color-bg);
 }
 
 img,
