@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 interface FooterProps {
@@ -30,7 +32,16 @@ export default function Footer({ className }: FooterProps) {
         <div className={styles.content}>
           <div className={styles.left}>
             <div className={styles.logo}>
-              <span className={styles.logoText}>Portfolio</span>
+              <Image 
+                src="/star.svg" 
+                alt="Soteriou" 
+                width={32} 
+                height={32} 
+                className={styles.logoImage} 
+              />
+              <Link href="/" className={styles.logoLink}>
+                <span className={styles.logoText}>Portfolio</span>
+              </Link>
             </div>
             <p className={styles.tagline}>
               Crafting digital experiences that matter.

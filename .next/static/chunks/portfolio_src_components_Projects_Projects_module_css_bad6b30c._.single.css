@@ -1,0 +1,259 @@
+/* [project]/portfolio/src/components/Projects/Projects.module.css [app-client] (css) */
+.Projects-module__ow-YFW__projects {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.Projects-module__ow-YFW__container {
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.Projects-module__ow-YFW__header {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+.Projects-module__ow-YFW__title {
+  color: var(--color-text);
+  margin: 0 0 1rem;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.Projects-module__ow-YFW__subtitle {
+  color: var(--color-muted);
+  max-width: 600px;
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.Projects-module__ow-YFW__grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  display: grid;
+}
+
+.Projects-module__ow-YFW__card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.Projects-module__ow-YFW__cardContent {
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+}
+
+.Projects-module__ow-YFW__cardHeader {
+  flex-direction: column;
+  gap: .75rem;
+  display: flex;
+}
+
+.Projects-module__ow-YFW__cardTitle {
+  color: var(--color-text);
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.Projects-module__ow-YFW__techCarouselContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.Projects-module__ow-YFW__techCarousel {
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.Projects-module__ow-YFW__techCarouselTrack {
+  gap: .5rem;
+  animation: 75s linear infinite Projects-module__ow-YFW__scrollTech;
+  display: inline-flex;
+}
+
+.Projects-module__ow-YFW__techCarouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes Projects-module__ow-YFW__scrollTech {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.Projects-module__ow-YFW__cardDescription {
+  color: var(--color-muted);
+  flex: 1;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.Projects-module__ow-YFW__metaRow {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  display: flex;
+}
+
+.Projects-module__ow-YFW__techTag {
+  color: var(--color-accent);
+  white-space: nowrap;
+  background: rgba(240, 154, 26, .05);
+  border: 1px solid rgba(240, 154, 26, .3);
+  border-radius: 6px;
+  align-items: center;
+  padding: .35rem .85rem;
+  font-size: .8rem;
+  font-weight: 500;
+  transition: all .3s;
+  display: inline-flex;
+}
+
+.Projects-module__ow-YFW__techTag:hover {
+  border-color: var(--color-accent);
+  background: rgba(240, 154, 26, .15);
+}
+
+.Projects-module__ow-YFW__links {
+  flex-shrink: 0;
+  gap: .5rem;
+  display: flex;
+}
+
+.Projects-module__ow-YFW__link {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  white-space: nowrap;
+  border-radius: 6px;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.5rem;
+  font-size: .9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .3s;
+  display: inline-flex;
+}
+
+.Projects-module__ow-YFW__link:hover {
+  opacity: .9;
+  text-decoration: none;
+}
+
+.Projects-module__ow-YFW__link:hover .Projects-module__ow-YFW__buttonIcon {
+  transform: rotate(45deg);
+}
+
+.Projects-module__ow-YFW__linkSecondary {
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  background: none;
+  border-radius: 6px;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.5rem;
+  font-size: .9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all .3s;
+  display: flex;
+}
+
+.Projects-module__ow-YFW__linkSecondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.Projects-module__ow-YFW__linkSecondary:hover .Projects-module__ow-YFW__buttonIcon {
+  transform: rotate(45deg);
+}
+
+.Projects-module__ow-YFW__buttonIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transition: transform .3s;
+}
+
+@media (max-width: 1024px) {
+  .Projects-module__ow-YFW__header {
+    margin-bottom: 3rem;
+  }
+
+  .Projects-module__ow-YFW__title {
+    font-size: 2.5rem;
+  }
+
+  .Projects-module__ow-YFW__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .Projects-module__ow-YFW__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .Projects-module__ow-YFW__metaRow {
+    justify-content: flex-start;
+  }
+
+  .Projects-module__ow-YFW__techCarouselTrack {
+    animation: 50s linear infinite Projects-module__ow-YFW__scrollTech;
+  }
+}
+
+@media (max-width: 768px) {
+  .Projects-module__ow-YFW__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .Projects-module__ow-YFW__techCarouselTrack {
+    animation: 35s linear infinite Projects-module__ow-YFW__scrollTech;
+  }
+}
+
+@media (max-width: 640px) {
+  .Projects-module__ow-YFW__header {
+    margin-bottom: 2rem;
+  }
+
+  .Projects-module__ow-YFW__title {
+    font-size: 2rem;
+  }
+
+  .Projects-module__ow-YFW__cardContent {
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .Projects-module__ow-YFW__links {
+    flex-direction: column;
+  }
+
+  .Projects-module__ow-YFW__link, .Projects-module__ow-YFW__linkSecondary {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=portfolio_src_components_Projects_Projects_module_css_bad6b30c._.single.css.map*/

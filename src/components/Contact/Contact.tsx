@@ -33,14 +33,23 @@ const XIcon = () => (
 
 export default function Contact({ className }: ContactProps) {
   const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'sending' | 'sent'>('idle');
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const [selectedSubject, setSelectedSubject] = React.useState<string>('Job Inquiry');
+
+  const subjectOptions = [
+    'Job Inquiry',
+    'Collaboration',
+    'General Question',
+    'Other'
+  ];
+
+async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const formData = new FormData(form);
     const payload = {
       name: String(formData.get('name') || ''),
       email: String(formData.get('email') || ''),
-      subject: String(formData.get('subject') || ''),
+      subject: selectedSubject,
       message: String(formData.get('message') || ''),
     };
 
@@ -96,14 +105,19 @@ export default function Contact({ className }: ContactProps) {
               </div>
               
               <div className={styles.formGroup}>
-                <label htmlFor="subject" className={styles.label}>Subject</label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  name="subject" 
-                  className={styles.input}
-                  required 
-                />
+                <label className={styles.label}>Subject</label>
+                <div className={styles.subjectTabs}>
+                  {subjectOptions.map((option) => (
+                    <button
+                      key={option}
+                      type="button"
+                      className={`${styles.subjectTab} ${selectedSubject === option ? styles.subjectTabActive : ''}`}
+                      onClick={() => setSelectedSubject(option)}
+                    >
+                      {option}
+                    </button>
+                  ))}
+                </div>
               </div>
               
               <div className={styles.formGroup}>

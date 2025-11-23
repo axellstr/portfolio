@@ -135,18 +135,6 @@ const projects = [
         link: "https://parisajewellery.com/"
     },
     {
-        title: "Pongo -XRP",
-        description: "Astro-built landing page for the PONGO token. Sub-second loads, strong SEO, responsive UI, rich social meta.",
-        tech: [
-            "Astro",
-            "TypeScript",
-            "SEO",
-            "SSG",
-            "Responsive"
-        ],
-        link: "https://pongoxrp.com"
-    },
-    {
         title: "E-Compvenience - Frontend",
         description: "Landing page and base API connection for ECV — a digital twin company focused on AR/VR map navigation. Built with Next.js and Tailwind CSS.",
         tech: [
@@ -207,12 +195,12 @@ function Projects({ className }) {
                 d: "M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"
             }, void 0, false, {
                 fileName: "[project]/src/components/Projects/Projects.tsx",
-                lineNumber: 70,
+                lineNumber: 64,
                 columnNumber: 7
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/Projects/Projects.tsx",
-            lineNumber: 64,
+            lineNumber: 58,
             columnNumber: 5
         }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -228,12 +216,12 @@ function Projects({ className }) {
                         children: "Selected Work & Contributions"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Projects/Projects.tsx",
-                        lineNumber: 78,
+                        lineNumber: 72,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/Projects/Projects.tsx",
-                    lineNumber: 77,
+                    lineNumber: 71,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -248,7 +236,7 @@ function Projects({ className }) {
                                         children: project.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Projects/Projects.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 79,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -256,7 +244,7 @@ function Projects({ className }) {
                                         children: project.description
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Projects/Projects.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 80,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -269,12 +257,12 @@ function Projects({ className }) {
                                                         children: technology
                                                     }, techIndex, false, {
                                                         fileName: "[project]/src/components/Projects/Projects.tsx",
-                                                        lineNumber: 91,
+                                                        lineNumber: 85,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Projects/Projects.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 83,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -289,56 +277,56 @@ function Projects({ className }) {
                                                             children: "View Project"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Projects/Projects.tsx",
-                                                            lineNumber: 104,
+                                                            lineNumber: 98,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(ArrowIcon, {}, void 0, false, {
                                                             fileName: "[project]/src/components/Projects/Projects.tsx",
-                                                            lineNumber: 105,
+                                                            lineNumber: 99,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/Projects/Projects.tsx",
-                                                    lineNumber: 98,
+                                                    lineNumber: 92,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Projects/Projects.tsx",
-                                                lineNumber: 96,
+                                                lineNumber: 90,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Projects/Projects.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Projects/Projects.tsx",
-                                lineNumber: 84,
+                                lineNumber: 78,
                                 columnNumber: 15
                             }, this)
                         }, index, false, {
                             fileName: "[project]/src/components/Projects/Projects.tsx",
-                            lineNumber: 83,
+                            lineNumber: 77,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/Projects/Projects.tsx",
-                    lineNumber: 81,
+                    lineNumber: 75,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Projects/Projects.tsx",
-            lineNumber: 76,
+            lineNumber: 70,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/Projects/Projects.tsx",
-        lineNumber: 75,
+        lineNumber: 69,
         columnNumber: 5
     }, this);
 }

@@ -1,0 +1,12 @@
+/* [project]/portfolio/src/components/BackgroundWrapper/BackgroundWrapper.module.css [app-client] (css) */
+.BackgroundWrapper-module__CKjYea__backgroundWrapper {
+  z-index: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=portfolio_src_components_BackgroundWrapper_BackgroundWrapper_module_css_bad6b30c._.single.css.map*/

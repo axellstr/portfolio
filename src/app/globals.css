@@ -1,21 +1,8 @@
-/* Dark theme (default) */
-:root {
-  --color-bg: #0a0908;
-  --color-text: #f4f4f9;
-  --color-accent: #FE7F2D; 
-  --color-muted: #a99985;
-  --color-border: #404040;
-  --font-primary: var(--font-clash-display), 'Inter', sans-serif;
-  --pattern-bg: #1a1a1a;
-  --pattern-fill: %23ffffff;
-  --pattern-opacity: 0.1;
-}
-
 /* Light theme */
 [data-theme="light"] {
   --color-bg: #F4FFFD;
-  --color-text: #0a0908;
-  --color-accent: #FE7F2D;
+  --color-text: #0E1116;
+  --color-accent: rgb(254, 127, 45);
   --color-muted: #6b6b6b;
   --color-border: #d0d0d0;
   --pattern-bg: #f8f7fa;
@@ -25,10 +12,10 @@
 
 /* Dark theme explicit */
 [data-theme="dark"] {
-  --color-bg: #0a0908;
-  --color-text: #f4f4f9;
+  --color-bg: #070707;
+  --color-text: #FAFDF6;
   --color-accent: #FE7F2D; 
-  --color-muted: #a99985;
+  --color-muted: #c3b4aa;
   --color-border: #404040;
   --pattern-bg: #1a1a1a;
   --pattern-fill: %23ffffff;
@@ -131,4 +118,10 @@ video {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Make star icon dark in light mode */
+[data-theme="light"] .home-icon {
+  filter: invert(1);
+  transition: filter 0.3s ease;
 }

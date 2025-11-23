@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
 import styles from './About.module.css';
 import { useRouter } from 'next/navigation';
+import CountUp from '@/components/CountUp';
 
 interface AboutProps {
   className?: string;
@@ -17,6 +18,23 @@ export default function About({ className }: AboutProps) {
   const handleOpenCV = () => {
     router.push('/cv');
   };
+
+  // Calculate dynamic coffee count that increases by 1 each day
+  // Start counting from today with base count of 777
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  // Get today's date as YYYY-MM-DD string for the start date
+  const todayStr = today.toISOString().split('T')[0];
+  const startDate = new Date(todayStr);
+  startDate.setHours(0, 0, 0, 0);
+  
+  // Calculate difference in days (0 today, 1 tomorrow, etc.)
+  const diffTime = today.getTime() - startDate.getTime();
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  
+  // Start at 777, increase by 1 each day
+  const coffeeCount = 777 + diffDays;
 
   return (
     <section className={`${styles.about} ${className || ''}`} id="about">
@@ -39,9 +57,11 @@ export default function About({ className }: AboutProps) {
                         priority
                       />
                     </div>
-                    <h2 className={styles.profileTitle}>Alexandros Soteriou</h2>
+                    <div className={styles.profileTitleWrapper}>
+                      <h2 className={styles.profileTitle}>Alexandros Soteriou</h2>
+                      <p className={styles.profileSubtitle}>Full-Stack Developer & UI/UX Designer</p>
+                    </div>
                   </div>
-                  <p className={styles.profileSubtitle}>Full-Stack Developer & UI/UX Designer</p>
                 </div>
                 
                 <div className={styles.profileBody}>
@@ -207,6 +227,16 @@ export default function About({ className }: AboutProps) {
                   </div>
                   <div className={styles.skillItem}>
                     <Image 
+                      src="/icons/adobe.svg" 
+                      alt="Adobe" 
+                      width={32} 
+                      height={32} 
+                      className={styles.skillIcon}
+                    />
+                    <span className={styles.skillName}>Adobe</span>
+                  </div>
+                  <div className={styles.skillItem}>
+                    <Image 
                       src="/icons/supabase.svg" 
                       alt="Supabase" 
                       width={32} 
@@ -214,6 +244,16 @@ export default function About({ className }: AboutProps) {
                       className={styles.skillIcon}
                     />
                     <span className={styles.skillName}>Supabase</span>
+                  </div>
+                  <div className={styles.skillItem}>
+                    <Image 
+                      src="/icons/vercel.svg" 
+                      alt="Vercel" 
+                      width={32} 
+                      height={32} 
+                      className={styles.skillIcon}
+                    />
+                    <span className={styles.skillName}>Vercel</span>
                   </div>
                   
                   {/* Duplicate set for seamless infinite scroll */}
@@ -331,6 +371,16 @@ export default function About({ className }: AboutProps) {
                   </div>
                   <div className={styles.skillItem}>
                     <Image 
+                      src="/icons/adobe.svg" 
+                      alt="Adobe" 
+                      width={32} 
+                      height={32} 
+                      className={styles.skillIcon}
+                    />
+                    <span className={styles.skillName}>Adobe</span>
+                  </div>
+                  <div className={styles.skillItem}>
+                    <Image 
                       src="/icons/supabase.svg" 
                       alt="Supabase" 
                       width={32} 
@@ -338,6 +388,16 @@ export default function About({ className }: AboutProps) {
                       className={styles.skillIcon}
                     />
                     <span className={styles.skillName}>Supabase</span>
+                  </div>
+                  <div className={styles.skillItem}>
+                    <Image 
+                      src="/icons/vercel.svg" 
+                      alt="Vercel" 
+                      width={32} 
+                      height={32} 
+                      className={styles.skillIcon}
+                    />
+                    <span className={styles.skillName}>Vercel</span>
                   </div>
                 </div>
               </div>
@@ -349,20 +409,52 @@ export default function About({ className }: AboutProps) {
             <h3 className={styles.cardTitle}>Experience</h3>
             <div className={styles.experienceList}>
               <div className={styles.experienceItem}>
-                <span className={styles.experienceNumber}>3+</span>
+                <span className={styles.experienceNumber}>
+                  <CountUp
+                    from={0}
+                    to={4}
+                    separator=","
+                    direction="up"
+                    duration={3}
+                  />
+                </span>
                 <span className={styles.experienceLabel}>Years Coding</span>
               </div>
               <div className={styles.experienceItem}>
-                <span className={styles.experienceNumber}>20+</span>
+                <span className={styles.experienceNumber}>
+                  <CountUp
+                    from={0}
+                    to={20}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                  />
+                </span>
                 <span className={styles.experienceLabel}>Projects</span>
               </div>
               <div className={styles.experienceItem}>
-                <span className={styles.experienceNumber}>10+</span>
-                <span className={styles.experienceLabel}>Technologies</span>
+                <span className={styles.experienceNumber}>
+                  <CountUp
+                    from={0}
+                    to={coffeeCount}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                  />
+                </span>
+                <span className={styles.experienceLabel}>Coffees</span>
               </div>
               <div className={styles.experienceItem}>
-                <span className={styles.experienceNumber}>5+</span>
-                <span className={styles.experienceLabel}>Clients</span>
+                <span className={styles.experienceNumber}>
+                  <CountUp
+                    from={0}
+                    to={6}
+                    separator=","
+                    direction="up"
+                    duration={1}
+                  />
+                </span>
+                <span className={styles.experienceLabel}>Certifications</span>
               </div>
             </div>
           </div>
@@ -382,31 +474,71 @@ export default function About({ className }: AboutProps) {
           <div className={styles.learningCard}>
             <h3 className={styles.cardTitle}>Currently Learning</h3>
             <div className={styles.learningList}>
-              <span className={styles.learningItem}>Three.js</span>
-              <span className={styles.learningItem}>WebGL</span>
-              <span className={styles.learningItem}>Rust</span>
+              <div className={styles.learningItem}>
+                <Image 
+                  src="/icons/threejs.svg" 
+                  alt="Three.js" 
+                  width={24} 
+                  height={24} 
+                  className={styles.learningIcon}
+                />
+                <span className={styles.learningName}>Three.js</span>
+              </div>
+              <div className={styles.learningItem}>
+                <Image 
+                  src="/icons/webgl.svg" 
+                  alt="WebGL" 
+                  width={24} 
+                  height={24} 
+                  className={styles.learningIcon}
+                />
+                <span className={styles.learningName}>WebGL</span>
+              </div>
+              <div className={styles.learningItem}>
+                <Image 
+                  src="/icons/after-effects.svg" 
+                  alt="After Effects" 
+                  width={24} 
+                  height={24} 
+                  className={styles.learningIcon}
+                />
+                <span className={styles.learningName}>After Effects</span>
+              </div>
+              <div className={styles.learningItem}>
+                <Image 
+                  src="/icons/blender.svg" 
+                  alt="Blender" 
+                  width={24} 
+                  height={24} 
+                  className={styles.learningIcon}
+                />
+                <span className={styles.learningName}>Blender</span>
+              </div>
+              <div className={styles.learningItem}>
+                <Image 
+                  src="/icons/unreal-engine.svg" 
+                  alt="Unreal Engine" 
+                  width={24} 
+                  height={24} 
+                  className={styles.learningIcon}
+                />
+                <span className={styles.learningName}>Unreal Engine</span>
+              </div>
+              <div className={styles.learningItem}>
+                <Image 
+                  src="/icons/raspberry-pi.svg" 
+                  alt="Raspberry Pi" 
+                  width={24} 
+                  height={24} 
+                  className={styles.learningIcon}
+                />
+                <span className={styles.learningName}>Raspberry Pi</span>
+              </div>
             </div>
           </div>
 
-          {/* Fun Fact Card with Vinci PNG */}
+          {/* Fun Fact Card */}
           <div className={styles.funFactCard}>
-            <div className={styles.funFactContent}>
-              <h3 className={styles.cardTitle}>Fun Fact</h3>
-              <p className={styles.funFactText}>
-                I love combining creativity with code to build unique digital experiences! ✨
-              </p>
-            </div>
-            {/* Vinci PNG inside the fun fact card */}
-            <div className={styles.vinciInCard}>
-              <Image 
-                src="/Vinci.png" 
-                alt="Da Vinci Vitruvian Man ornament" 
-                width={300} 
-                height={300} 
-                className={`${styles.vinciSvg} ${theme === 'dark' ? styles.vinciDark : styles.vinciLight}`}
-                priority={false}
-              />
-            </div>
           </div>
         </div>
       </div>

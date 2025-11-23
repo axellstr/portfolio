@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/components/BackgroundWrapper/BackgroundWrapper.module.css"],"sourcesContent":[".backgroundWrapper {\r\n  position: fixed;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  z-index: -1;\r\n  pointer-events: none;\r\n}\r\n\r\n"],"names":[],"mappings":"AAAA"}}]
+}

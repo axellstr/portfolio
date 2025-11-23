@@ -19,25 +19,8 @@ export default function Header({ className }: HeaderProps) {
           </Link>
         </div>
         
-        <nav className={styles.nav}>
-          <ul className={styles.navList}>
-            <li className={styles.navItem}>
-              <a href="#about" className={styles.navLink}>About</a>
-            </li>
-            <li className={styles.navItem}>
-              <a href="#work" className={styles.navLink}>Work</a>
-            </li>
-            <li className={styles.navItem}>
-              <a href="#contact" className={styles.navLink}>Contact</a>
-            </li>
-          </ul>
-        </nav>
-        
         <div className={styles.cta}>
           <ThemeToggle className={styles.themeToggle} />
-          <button className={styles.ctaButton}>
-            Let&apos;s Talk
-          </button>
         </div>
       </div>
     </header>

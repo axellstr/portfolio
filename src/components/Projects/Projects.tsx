@@ -15,47 +15,41 @@ interface ProjectsProps {
 const projects: ProjectProps[] = [
   {
     title: "Lihua - XRP",
-    description: "Astro-built landing page for the LIHUA token. Fast, SEO-friendly, responsive, with OG/Twitter meta and analytics.",
-    tech: ["Astro", "TypeScript", "SEO", "SSG", "Responsive"],
+    description: "Frontend development for LIHUA, a cryptocurrency token created on the XRPL (XRP Ledger) blockchain. Built a fast, SEO-friendly, responsive landing page with Astro, featuring OG/Twitter meta tags and analytics integration.",
+    tech: ["Astro", "TypeScript", "SEO", "SSG", "Responsive", "XRPL"],
     link: "https://getlihua.com",
   },
   {
     title: "Parisa Jewellery - Ecommerce",
-    description: "Jewellery ecommerce built with Astro, CSS, and a modular database. Optimized for performance using Astro's image handler.",
-    tech: ["Astro", "CSS", "Modular DB", "Astro Images", "Performance"],
+    description: "Full-stack ecommerce platform for luxury jewellery built with Astro, CSS, and a modular database. Integrated Stripe.js for secure payment processing and optimized for performance using Astro's image handler.",
+    tech: ["Astro", "CSS", "Stripe.js", "Modular DB", "Astro Images", "Performance"],
     link: "https://parisajewellery.com/",
   },
   {
-    title: "Pongo -XRP",
-    description: "Astro-built landing page for the PONGO token. Sub-second loads, strong SEO, responsive UI, rich social meta.",
-    tech: ["Astro", "TypeScript", "SEO", "SSG", "Responsive"],
-    link: "https://pongoxrp.com",
-  },
-  {
     title: "E-Compvenience - Frontend",
-    description: "Landing page and base API connection for ECV — a digital twin company focused on AR/VR map navigation. Built with Next.js and Tailwind CSS.",
-    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "SEO"],
+    description: "Landing page and base API connection for ECV — a digital twin company specializing in AR/VR 3D navigation and drone LiDAR systems. Built with Next.js and Tailwind CSS for modern, responsive design.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "SEO", "API Integration"],
     link: "https://www.ecvpresale.com/",
     github: "https://github.com/username/coin-project"
   },
   {
     title: "McQueen's Detailing - Fullstack",
-    description: "Full e‑commerce car garage built with Astro, Express/Node.js and Stripe for secure checkout, products, and orders.",
-    tech: ["Astro", "Express", "Node.js", "Stripe", "TypeScript"],
+    description: "Full e‑commerce car garage platform built with Astro, Express/Node.js and Stripe for secure checkout, product management, and order processing. Features comprehensive admin dashboard and inventory management.",
+    tech: ["Astro", "Express", "Node.js", "Stripe", "TypeScript", "MongoDB", "Admin Dashboard"],
     link: "https://www.mcqueensdetailing.eu/",
     github: "https://github.com/username/javascript-advanced"
   },
   {
     title: "The Spirit Lab - Frontend",
-    description: "Landing page for a retreat center built with plain HTML, CSS, and lightweight JS handlers for animations and interactions.",
-    tech: ["HTML", "CSS", "JavaScript", "Animations", "Responsive"],
+    description: "Landing page for a retreat center built with vanilla HTML, CSS, and lightweight JavaScript handlers for smooth animations and interactive elements. Clean, performant, and fully responsive design.",
+    tech: ["HTML", "CSS", "JavaScript", "Animations", "Responsive", "Vanilla JS"],
     link: "https://thespiritlab.org/"
   },
   {
     title: "Slotsplanet - Fullstack",
-    description: "Full affiliate-link ecosystem with analytics and CMS. High SEO performance, built with Next.js.",
-    tech: ["Next.js", "TypeScript", "CMS", "Analytics", "SEO"],
-    link: "https://slotsplanet.net"
+    description: "Full-stack affiliate links website with custom CMS for client content management. Features comprehensive analytics tracking, SEO optimization, and dynamic link management system built with Next.js.",
+    tech: ["Next.js", "TypeScript", "Custom CMS", "Analytics", "SEO", "Affiliate System"],
+    link: "https://planet-ecru.vercel.app/"
   }
 ];
 
@@ -82,17 +76,31 @@ export default function Projects({ className }: ProjectsProps) {
           {projects.map((project, index) => (
             <div key={index} className={styles.card}>
               <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{project.title}</h3>
+                <div className={styles.cardHeader}>
+                  <h3 className={styles.cardTitle}>{project.title}</h3>
+                  <div className={styles.techCarouselContainer}>
+                    <div className={styles.techCarousel}>
+                      <div className={styles.techCarouselTrack}>
+                        {/* First set of tech tags */}
+                        {project.tech.map((technology, techIndex) => (
+                          <span key={`${index}-${techIndex}-1`} className={styles.techTag}>
+                            {technology}
+                          </span>
+                        ))}
+                        {/* Duplicate set for seamless infinite scroll */}
+                        {project.tech.map((technology, techIndex) => (
+                          <span key={`${index}-${techIndex}-2`} className={styles.techTag}>
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
                 <p className={styles.cardDescription}>{project.description}</p>
                 
                 <div className={styles.metaRow}>
-                  <div className={styles.tech}>
-                    {project.tech.map((technology, techIndex) => (
-                      <span key={techIndex} className={styles.techTag}>
-                        {technology}
-                      </span>
-                    ))}
-                  </div>
                   <div className={styles.links}>
                     {project.link && (
                       <a 

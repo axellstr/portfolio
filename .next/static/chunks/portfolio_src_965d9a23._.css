@@ -1,0 +1,215 @@
+/* [project]/portfolio/src/app/clashdisplay_536ec091.module.css [app-client] (css) */
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Extralight-s.p.0534174f.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Light-s.p.75c04e1b.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Regular-s.p.8d84835b.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Medium-s.p.bce5a8f2.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Semibold-s.p.f188b517.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url("../media/ClashDisplay_Bold-s.p.9137c724.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: clashDisplay Fallback;
+  src: local(Arial);
+  ascent-override: 83.42%;
+  descent-override: 23.43%;
+  line-gap-override: 8.44%;
+  size-adjust: 106.69%;
+}
+
+.clashdisplay_536ec091-module__z1jltG__className {
+  font-family: clashDisplay, clashDisplay Fallback;
+}
+
+.clashdisplay_536ec091-module__z1jltG__variable {
+  --font-clash-display: "clashDisplay", "clashDisplay Fallback";
+}
+
+/* [project]/portfolio/src/app/globals.css [app-client] (css) */
+:root {
+  --color-bg: #0a0908;
+  --color-text: #f4f4f9;
+  --color-accent: #441b00;
+  --color-muted: #a99985;
+  --color-border: #404040;
+  --font-primary: var(--font-clash-display), "Inter", sans-serif;
+  --pattern-bg: #1a1a1a;
+  --pattern-fill: % 23ffffff;
+  --pattern-opacity: .1;
+}
+
+[data-theme="light"] {
+  --color-bg: #f4fffd;
+  --color-text: #0a0908;
+  --color-accent: #fe7f2d;
+  --color-muted: #6b6b6b;
+  --color-border: #d0d0d0;
+  --pattern-bg: #f8f7fa;
+  --pattern-fill: % 23d4d1d8;
+  --pattern-opacity: .1;
+}
+
+[data-theme="dark"] {
+  --color-bg: #0a0908;
+  --color-text: #f4f4f9;
+  --color-accent: #fe7f2d;
+  --color-muted: #a99985;
+  --color-border: #404040;
+  --pattern-bg: #1a1a1a;
+  --pattern-fill: % 23ffffff;
+  --pattern-opacity: .1;
+}
+
+html, body {
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.1;
+}
+
+button {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-family: inherit;
+}
+
+button:hover {
+  opacity: .9;
+}
+
+main {
+  contain: layout style;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+:root main, [data-theme="dark"] main, [data-theme="light"] main {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* [project]/portfolio/src/components/FaultyTerminal/FaultyTerminal.css [app-client] (css) */
+.faulty-terminal-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.faulty-terminal-container canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* [project]/portfolio/src/components/BackgroundWrapper/BackgroundWrapper.module.css [app-client] (css) */
+.BackgroundWrapper-module__CKjYea__backgroundWrapper {
+  z-index: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/*# sourceMappingURL=portfolio_src_965d9a23._.css.map*/
