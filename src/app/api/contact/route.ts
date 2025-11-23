@@ -73,7 +73,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true, id: data?.id });
-  } catch (err) {
+  } catch {
     return NextResponse.json(
       { error: 'Unexpected server error' },
       { status: 500 }
