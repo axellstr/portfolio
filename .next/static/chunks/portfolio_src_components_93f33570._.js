@@ -1879,14 +1879,14 @@ function Contact(param) {
                 },
                 body: JSON.stringify(payload)
             });
-            const data = await res.json();
+            await res.json();
             if (!res.ok) {
                 setSubmitStatus('idle');
                 return; // Keep silent per request
             }
             setSubmitStatus('sent');
             form.reset();
-        } catch (err) {
+        } catch (e) {
             setSubmitStatus('idle'); // Keep silent per request
         }
     }

@@ -288,7 +288,7 @@ function CVPage() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/portfolio/src/app/cv/page.tsx",
-                    lineNumber: 104,
+                    lineNumber: 105,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
