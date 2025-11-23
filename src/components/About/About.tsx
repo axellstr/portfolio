@@ -47,7 +47,7 @@ export default function About({ className }: AboutProps) {
                   <div className={styles.profileTitleRow}>
                     <div className={styles.profileAvatar}>
                       <Image 
-                        src="/ppf3.png" 
+                        src="/bwppf.jpg" 
                         alt="Alexandros Soteriou" 
                         width={100} 
                         height={100} 

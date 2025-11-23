@@ -1,0 +1,259 @@
+/* [project]/src/components/Projects/Projects.module.css [app-client] (css) */
+.Projects-module__T_D1Ca__projects {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.Projects-module__T_D1Ca__container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.Projects-module__T_D1Ca__header {
+  text-align: left;
+  margin-bottom: 4rem;
+}
+
+.Projects-module__T_D1Ca__title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--color-text);
+}
+
+.Projects-module__T_D1Ca__subtitle {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.Projects-module__T_D1Ca__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.Projects-module__T_D1Ca__card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.Projects-module__T_D1Ca__cardContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.Projects-module__T_D1Ca__cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.Projects-module__T_D1Ca__cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.Projects-module__T_D1Ca__techCarouselContainer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.Projects-module__T_D1Ca__techCarousel {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.Projects-module__T_D1Ca__techCarouselTrack {
+  display: inline-flex;
+  animation: 75s linear infinite Projects-module__T_D1Ca__scrollTech;
+  gap: .5rem;
+}
+
+.Projects-module__T_D1Ca__techCarouselTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes Projects-module__T_D1Ca__scrollTech {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.Projects-module__T_D1Ca__cardDescription {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-muted);
+  margin: 0;
+  flex: 1;
+}
+
+.Projects-module__T_D1Ca__metaRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.Projects-module__T_D1Ca__techTag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #f09a1a4d;
+  background: #f09a1a0d;
+  color: var(--color-accent);
+  padding: .35rem .85rem;
+  border-radius: 6px;
+  font-size: .8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all .3s;
+}
+
+.Projects-module__T_D1Ca__techTag:hover {
+  background: #f09a1a26;
+  border-color: var(--color-accent);
+}
+
+.Projects-module__T_D1Ca__links {
+  display: flex;
+  gap: .5rem;
+  flex-shrink: 0;
+}
+
+.Projects-module__T_D1Ca__link {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: .75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: .9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  transition: all .3s;
+  white-space: nowrap;
+}
+
+.Projects-module__T_D1Ca__link:hover {
+  opacity: .9;
+  text-decoration: none;
+}
+
+.Projects-module__T_D1Ca__link:hover .Projects-module__T_D1Ca__buttonIcon {
+  transform: rotate(45deg);
+}
+
+.Projects-module__T_D1Ca__linkSecondary {
+  background: none;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: .75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: .9rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  transition: all .3s;
+}
+
+.Projects-module__T_D1Ca__linkSecondary:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.Projects-module__T_D1Ca__linkSecondary:hover .Projects-module__T_D1Ca__buttonIcon {
+  transform: rotate(45deg);
+}
+
+.Projects-module__T_D1Ca__buttonIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform .3s;
+}
+
+@media (width <= 1024px) {
+  .Projects-module__T_D1Ca__header {
+    margin-bottom: 3rem;
+  }
+
+  .Projects-module__T_D1Ca__title {
+    font-size: 2.5rem;
+  }
+
+  .Projects-module__T_D1Ca__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .Projects-module__T_D1Ca__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .Projects-module__T_D1Ca__metaRow {
+    justify-content: flex-start;
+  }
+
+  .Projects-module__T_D1Ca__techCarouselTrack {
+    animation: 50s linear infinite Projects-module__T_D1Ca__scrollTech;
+  }
+}
+
+@media (width <= 768px) {
+  .Projects-module__T_D1Ca__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .Projects-module__T_D1Ca__techCarouselTrack {
+    animation: 35s linear infinite Projects-module__T_D1Ca__scrollTech;
+  }
+}
+
+@media (width <= 640px) {
+  .Projects-module__T_D1Ca__header {
+    margin-bottom: 2rem;
+  }
+
+  .Projects-module__T_D1Ca__title {
+    font-size: 2rem;
+  }
+
+  .Projects-module__T_D1Ca__cardContent {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .Projects-module__T_D1Ca__links {
+    flex-direction: column;
+  }
+
+  .Projects-module__T_D1Ca__link, .Projects-module__T_D1Ca__linkSecondary {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=src_components_Projects_Projects_module_b52d8e88.css.map*/
