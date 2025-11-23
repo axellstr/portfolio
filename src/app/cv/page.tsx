@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'CV',
@@ -95,7 +96,7 @@ export default function CVPage() {
             title="Home"
           >
             {/* Favicon */}
-            <img src="/star.svg" alt="Home" width={18} height={18} className="home-icon" style={{ display: 'block' }} aria-hidden="true" />
+            <Image src="/star.svg" alt="Home" width={18} height={18} className="home-icon" style={{ display: 'block' }} aria-hidden="true" />
           </Link>
         </div>
       </div>

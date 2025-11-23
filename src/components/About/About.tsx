@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import { useTheme } from '@/contexts/ThemeContext';
 import styles from './About.module.css';
 import { useRouter } from 'next/navigation';
 import CountUp from '@/components/CountUp';
@@ -11,7 +10,6 @@ interface AboutProps {
 }
 
 export default function About({ className }: AboutProps) {
-  const { theme } = useTheme();
 
   const router = useRouter();
 
