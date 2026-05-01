@@ -1,0 +1,935 @@
+/* Fun Fact Card */
+.funFactCard {
+  grid-column: 3 / 5;
+  grid-row: 3;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-height: 0;
+}
+
+.funFactInner {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.funFactLocation {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 0;
+  max-width: min(280px, 56%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.funFactLocationEyebrow {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.funFactLocationCity {
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.funFactLocationTimeRow {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.funFactLocationTimeLabel {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.funFactLocationTime {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+  white-space: nowrap;
+}
+
+.funFactLocationTz {
+  font-weight: 500;
+  font-size: 0.92em;
+  color: var(--color-muted);
+}
+
+.funFactLocationFoot {
+  margin-top: auto;
+  padding-top: 0.55rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
+.funFactGlobeWrap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(330px, 50vw);
+  aspect-ratio: 1;
+  transform: translate(30%, 28%);
+}
+
+.funFactGlobeCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 4rem;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  min-height: 70vh;
+  position: relative;
+}
+
+
+
+.bentoBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 1.5rem;
+  height: 100%;
+  
+}
+
+/* Main Profile Card - spans 2x2 */
+.profileCard {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Profile Content Container - Professional Layout */
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Text Content - Professional Structure */
+.profileTextColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  padding: 1rem;
+}
+
+.profileHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Profile Title Row with Avatar */
+.profileTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+
+/* Profile Avatar */
+.profileAvatar {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+}
+
+/* className applies to the <img> when using fill — reliable crop + nudge */
+.profileAvatarImage {
+  object-fit: cover;
+  object-position: center calc(50% + 10px);
+}
+
+
+
+
+.profileTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.profileTitle {
+  font-size: clamp(1rem, 4vw, 2.2rem);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.profileSubtitle {
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Profile Body */
+.profileBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+
+}
+
+.profileDescription {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* Profile Highlights */
+.profileHighlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.highlight:last-child {
+  border-bottom: none;
+}
+
+.highlightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(254, 127, 45, 0.1);
+  border-radius: 8px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.highlight span {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* Profile Footer */
+.profileFooter {
+  margin-top: auto;
+}
+
+.profileActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+
+
+/* CV Button Styles - Primary Button */
+.cvButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.cvButton:hover,
+.cvButton:focus-visible {
+  text-decoration: none;
+}
+
+.cvButton:active {
+  transform: translateY(0);
+}
+
+.cvIcon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
+
+.cvButton:hover .cvIcon,
+.cvButton:focus-visible .cvIcon {
+  transform: rotate(45deg);
+}
+
+
+/* Skills Card */
+.skillsCard {
+  grid-column: 3 / 5;
+  grid-row: 1;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Experience Card */
+.experienceCard {
+  grid-column: 3;
+  grid-row: 2;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Languages Card */
+.languagesCard {
+  grid-column: 4;
+  grid-row: 2;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Currently Learning Card */
+.learningCard {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Common Card Styles */
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: var(--color-text);
+}
+
+
+/* Carousel Container */
+.carouselContainer {
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.carousel {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.carouselTrack {
+  display: inline-flex;
+  animation: scroll 45s linear infinite;
+  gap: 1rem;
+}
+
+
+/* Keyframe animation for infinite scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Skill Item */
+.skillItem {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1rem 0.75rem;
+  min-width: 100px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+
+.skillIcon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 0.5rem;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease, color 0.3s ease;
+}
+
+/* GitHub icon specific styling for light mode */
+[data-theme="light"] .skillIcon[alt="GitHub"] {
+  filter: brightness(0) saturate(100%) invert(0);
+}
+
+/* GitHub icon hover effect for light mode */
+[data-theme="light"] .skillItem:hover .skillIcon[alt="GitHub"] {
+  filter: brightness(0.3) saturate(100%) invert(0);
+}
+
+.skillItem:hover .skillIcon {
+  filter: brightness(1.3);
+}
+
+/* Ensure other icons still get hover effect in light mode */
+[data-theme="light"] .skillItem:hover .skillIcon:not([alt="GitHub"]) {
+  filter: brightness(1.3);
+}
+
+.skillName {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: center;
+  line-height: 1.2;
+}
+
+
+/* Experience List */
+.experienceList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.experienceItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 70px;
+}
+
+.experienceNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.experienceLabel {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  word-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.3;
+}
+
+/* Languages List */
+.languagesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.language {
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 0.5rem 0.4rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 70px;
+  box-sizing: border-box;
+}
+
+.language:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Learning Carousel Track */
+.learningCarouselTrack {
+  display: inline-flex;
+  animation: scroll 25s linear infinite;
+  gap: 1rem;
+}
+
+.learningItem {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  min-width: 140px;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.learningIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  filter: brightness(0.9);
+  object-fit: contain;
+}
+
+/* Three.js and Unreal Engine icons - invert in dark mode */
+[data-theme="dark"] .learningIcon[alt="Three.js"],
+[data-theme="dark"] .learningIcon[alt="Unreal Engine"] {
+  filter: brightness(0) saturate(100%) invert(1);
+}
+
+.learningName {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+
+/* Laptop/Tablet responsive - single column with side-by-side experience & languages */
+@media (max-width: 1200px) {
+  .container {
+    padding: 2rem;
+  }
+  
+  .bentoBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+  }
+  
+  /* Profile Card - full width */
+  .profileCard {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  
+  /* Skills Card - full width */
+  .skillsCard {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+  
+  /* Experience Card - left half */
+  .experienceCard {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  /* Languages Card - right half */
+  .languagesCard {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  
+  /* Currently Learning - full width */
+  .learningCard {
+    grid-column: 1 / 3;
+    grid-row: 4;
+  }
+  
+  /* Fun Fact Card - full width */
+  .funFactCard {
+    grid-column: 1 / 3;
+    grid-row: 5;
+  }
+
+  .funFactLocation {
+    max-width: min(260px, 58%);
+  }
+
+  .funFactGlobeWrap {
+    width: min(280px, 78vw);
+    transform: translate(28%, 26%);
+  }
+  
+  .experienceItem {
+    min-height: 70px;
+  }
+  
+  .language {
+    min-height: 70px;
+    font-size: 0.85rem;
+  }
+  
+}
+
+/* Mobile responsive - single column layout */
+@media (max-width: 768px) {
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .bentoBox {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+  }
+  
+  
+  .profileTitle {
+    font-size: clamp(1rem, 2rem, 2rem);
+  }
+  
+  .profileCard,
+  .skillsCard,
+  .experienceCard,
+  .languagesCard,
+  .learningCard,
+  .funFactCard {
+    grid-column: unset;
+    grid-row: unset;
+    width: 100%;
+  }
+  
+  /* Ensure consistent padding on mobile */
+  .skillsCard,
+  .experienceCard,
+  .languagesCard,
+  .learningCard {
+    padding: 1rem;
+  }
+  
+  /* Adjust grid layouts for mobile */
+  .experienceList {
+    gap: 0.5rem;
+  }
+  
+  .experienceItem {
+    min-height: 65px;
+  }
+  
+  .languagesList {
+    gap: 0.5rem;
+  }
+  
+  .language {
+    min-height: 65px;
+    font-size: 0.85rem;
+  }
+  
+  .learningCarouselTrack {
+    animation: scroll 20s linear infinite;
+    gap: 0.75rem;
+  }
+  
+  .learningItem {
+    padding: 0.6rem 0.75rem;
+    min-width: 120px;
+    gap: 0.4rem;
+  }
+
+  .learningIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .learningName {
+    font-size: 0.7rem;
+  }
+
+  /* Profile Card Mobile Layout */
+  .profileTitleRow {
+    gap: 0.75rem;
+  }
+
+  .profileAvatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profileTitle {
+    font-size: clamp(0.9rem, 1.8rem, 1.8rem);
+  }
+
+  .profileHighlights {
+    gap: 0.5rem;
+  }
+
+  .highlight {
+    padding: 0.4rem 0;
+  }
+
+  .highlightIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .profileActions {
+    justify-content: flex-end;
+  }
+
+  .cvButton {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+  
+  .funFactCard {
+    min-height: 120px;
+    padding: 1rem;
+  }
+
+  .funFactLocation {
+    max-width: min(220px, 62%);
+  }
+
+  .funFactLocationCity {
+    font-size: 1.05rem;
+  }
+
+  .funFactGlobeWrap {
+    width: min(220px, 88vw);
+    transform: translate(26%, 24%);
+  }
+  
+  .skillsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .skillItem {
+    padding: 0.5rem;
+  }
+  
+  .skillIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .skillName {
+    font-size: 0.75rem;
+  }
+  
+  .experienceItem {
+    padding: 1rem;
+  }
+  
+  .experienceTitle {
+    font-size: 1rem;
+  }
+  
+  .experienceCompany {
+    font-size: 0.8rem;
+  }
+  
+  .experienceDate {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  
+  .profileTextColumn {
+    padding: 0.25rem;
+  }
+
+  
+  .profileCard,
+  .skillsCard,
+  .experienceCard,
+  .languagesCard,
+  .learningCard,
+  .funFactCard {
+    padding: 1rem;
+  }
+  
+  /* Better grid item sizing */
+  .experienceItem {
+    min-height: 60px;
+  }
+  
+  .experienceNumber {
+    font-size: 1.75rem;
+  }
+  
+  .experienceLabel {
+    font-size: 0.8rem;
+  }
+  
+  .language {
+    min-height: 60px;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+  }
+  
+  .learningCarouselTrack {
+    animation: scroll 18s linear infinite;
+    gap: 0.5rem;
+  }
+
+  .learningItem {
+    padding: 0.5rem 0.6rem;
+    min-width: 100px;
+    gap: 0.35rem;
+  }
+
+  .learningIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .learningName {
+    font-size: 0.65rem;
+  }
+  
+  .profileTitleRow {
+    gap: 0.5rem;
+  }
+
+  .profileAvatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profileTitle {
+    font-size: clamp(0.8rem, 1.6rem, 1.6rem);
+  }
+  .profileSubtitle {
+    font-size: 1rem;
+  }
+  .profileDescription {
+    font-size: 1rem;
+  }
+
+  .profileHighlights {
+    gap: 0.4rem;
+  }
+
+  .highlight {
+    padding: 0.3rem 0;
+  }
+
+  .highlightIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .highlight span {
+    font-size: 0.8rem;
+  }
+
+  .cvButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+  
+  /* Small mobile carousel adjustments */
+  .carouselTrack {
+    animation: scroll 60s linear infinite;
+    gap: 0.5rem;
+  }
+  
+  .carouselTrack:hover {
+    animation-play-state: paused;
+  }
+  
+  .skillItem {
+    min-width: 60px;
+    padding: 0.5rem 0.375rem;
+  }
+  
+  .skillIcon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 0.25rem;
+  }
+  
+  .skillName {
+    font-size: 0.65rem;
+  }
+} 

@@ -1,0 +1,21 @@
+{
+  "name": "Alexandros Soteriou - Portfolio",
+  "short_name": "A. Soteriou",
+  "description": "Full-Stack Developer & Designer specializing in React, Next.js, TypeScript, and modern web technologies.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0908",
+  "theme_color": "#FE7F2D",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/star.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "design"],
+  "lang": "en",
+  "scope": "/"
+} 
