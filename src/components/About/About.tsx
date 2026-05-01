@@ -99,7 +99,10 @@ export default function About({ className }: AboutProps) {
                       />
                     </div>
                     <div className={styles.profileTitleWrapper}>
-                      <h2 className={styles.profileTitle}>Alexandros Soteriou</h2>
+                      <h2 className={styles.profileTitle}>
+                        <span className={styles.profileTitleLine}>Alexandros</span>
+                        <span className={styles.profileTitleLine}>Soteriou</span>
+                      </h2>
                       <p className={styles.profileSubtitle}>Full-Stack Developer & UI/UX Designer</p>
                     </div>
                   </div>
