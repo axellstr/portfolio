@@ -149,8 +149,8 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
               <div className={styles.contactDetails}>
                 <div className={styles.contactItem}>
                   <span className={styles.contactLabel}>Email</span>
-                  <a href="mailto:soterioudev@gmail.com" className={styles.contactValue}>
-                    soterioudev@gmail.com
+                  <a href="mailto:soteriou.dev@gmail.com" className={styles.contactValue}>
+                    soteriou.dev@gmail.com
                   </a>
                 </div>
 
@@ -191,7 +191,7 @@ async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
                   <XIcon />
                 
                 </a>
-                <a href="mailto:soterioudev@gmail.com" className={styles.socialLink}>
+                <a href="mailto:soteriou.dev@gmail.com" className={styles.socialLink}>
                   <EmailIcon />
                   <span>Email</span>
                 </a>
