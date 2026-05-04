@@ -171,16 +171,28 @@
 .profileAvatar {
   width: 100px;
   height: 100px;
+  min-width: 100px;
+  min-height: 100px;
   flex-shrink: 0;
   overflow: hidden;
   position: relative;
   border-radius: 50%;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  /* Reliable circle clip on mobile WebKit (avoids flat edge / bad overflow rounding) */
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  isolation: isolate;
 }
 
-/* className applies to the <img> when using fill — reliable crop + nudge */
+/* className applies to the <img> when using fill — override globals.css img { max-width; height: auto } so fill + circle crop stay square */
 .profileAvatarImage {
+  width: 100%;
+  height: 100%;
+  max-width: none;
   object-fit: cover;
-  object-position: center calc(50% + 10px);
+  object-position: center center;
+  border-radius: 50%;
 }
 
 
@@ -204,8 +216,13 @@
   flex-shrink: 1;
 }
 
+/* One line on tablet/desktop; stacked lines only on narrow phones (see 640px breakpoint) */
 .profileTitleLine {
-  display: block;
+  display: inline;
+}
+
+.profileTitleWordGap {
+  white-space: pre;
 }
 
 .profileSubtitle {
@@ -309,14 +326,37 @@
   transform: translateY(0);
 }
 
-.cvIcon {
+.cvIconWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
   flex-shrink: 0;
-  transition: transform 0.3s ease, color 0.3s ease, fill 0.3s ease;
 }
 
-.cvButton:hover .cvIcon,
-.cvButton:focus-visible .cvIcon {
-  transform: rotate(45deg);
+.cvIcon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out, color 0.3s ease, fill 0.3s ease;
+}
+
+.cvIconCopy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cvButton:hover .cvIcon:first-child,
+.cvButton:focus-visible .cvIcon:first-child {
+  transform: translate(150%, -150%);
+}
+
+.cvButton:hover .cvIconCopy,
+.cvButton:focus-visible .cvIconCopy {
+  transform: translate(0);
+  transition: transform 0.3s ease-in-out 0.1s;
 }
 
 
@@ -724,6 +764,12 @@
   .profileAvatar {
     width: 60px;
     height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+  }
+
+  .profileAvatarImage {
+    object-position: center center;
   }
 
   .profileTitle {
@@ -805,6 +851,17 @@
   }
 }
 
+/* Stack name on two lines only on phones — tablets keep one full-width line */
+@media (max-width: 640px) {
+  .profileTitleLine {
+    display: block;
+  }
+
+  .profileTitleWordGap {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .container {
     max-width: 100%;
@@ -871,11 +928,14 @@
   .profileAvatar {
     width: 50px;
     height: 50px;
+    min-width: 50px;
+    min-height: 50px;
   }
 
   .profileTitle {
     font-size: clamp(0.8rem, 1.6rem, 1.6rem);
   }
+
   .profileSubtitle {
     font-size: 1rem;
   }

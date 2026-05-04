@@ -42,15 +42,28 @@ const projects: ProjectProps[] = [
 ];
 
 export default function Projects({ className }: ProjectsProps) {
+  const arrowPath =
+    'M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z';
+
   const ArrowIcon = () => (
-    <svg 
-      className={styles.buttonIcon} 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 24 24" 
-      fill="currentColor"
-    >
-      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
-    </svg>
+    <span className={styles.buttonIconWrap} aria-hidden>
+      <svg
+        className={styles.buttonIcon}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d={arrowPath} />
+      </svg>
+      <svg
+        className={`${styles.buttonIcon} ${styles.buttonIconCopy}`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d={arrowPath} />
+      </svg>
+    </span>
   );
 
   return (

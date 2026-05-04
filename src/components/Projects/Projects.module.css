@@ -157,8 +157,13 @@
   text-decoration: none;
 }
 
-.link:hover .buttonIcon {
-  transform: rotate(45deg);
+.link:hover .buttonIcon:first-child {
+  transform: translate(150%, -150%);
+}
+
+.link:hover .buttonIconCopy {
+  transform: translate(0);
+  transition: transform 0.3s ease-in-out 0.1s;
 }
 
 .linkSecondary {
@@ -182,15 +187,37 @@
   text-decoration: none;
 }
 
-.linkSecondary:hover .buttonIcon {
-  transform: rotate(45deg);
+.linkSecondary:hover .buttonIcon:first-child {
+  transform: translate(150%, -150%);
+}
+
+.linkSecondary:hover .buttonIconCopy {
+  transform: translate(0);
+  transition: transform 0.3s ease-in-out 0.1s;
+}
+
+.buttonIconWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .buttonIcon {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  transition: transform 0.3s ease, color 0.3s ease, fill 0.3s ease;
+  transition: transform 0.3s ease-in-out, color 0.3s ease, fill 0.3s ease;
+}
+
+.buttonIconCopy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Tablet responsive */

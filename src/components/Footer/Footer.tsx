@@ -9,15 +9,28 @@ interface FooterProps {
 export default function Footer({ className }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
+  const arrowPath =
+    'M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z';
+
   const ArrowIcon = () => (
-    <svg 
-      className={styles.linkIcon} 
-      xmlns="http://www.w3.org/2000/svg" 
-      viewBox="0 0 24 24" 
-      fill="currentColor"
-    >
-      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
-    </svg>
+    <span className={styles.arrowIconWrap} aria-hidden>
+      <svg
+        className={styles.arrowIconSvg}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d={arrowPath} />
+      </svg>
+      <svg
+        className={`${styles.arrowIconSvg} ${styles.arrowIconSvgCopy}`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d={arrowPath} />
+      </svg>
+    </span>
   );
 
   const XIcon = () => (
@@ -91,7 +104,10 @@ export default function Footer({ className }: FooterProps) {
                   </li>
                   <li>
                     <a href="https://x.com/7Afterlife" className={styles.link} target="_blank" rel="noopener noreferrer">
-                      <XIcon />
+                      <span className={styles.linkLeading}>
+                        <XIcon />
+                        <span>( twitter )</span>
+                      </span>
                       <ArrowIcon />
                     </a>
                   </li>

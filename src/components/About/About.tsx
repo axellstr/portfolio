@@ -90,7 +90,7 @@ export default function About({ className }: AboutProps) {
                   <div className={styles.profileTitleRow}>
                     <div className={styles.profileAvatar}>
                       <Image
-                        src="/ppf.jpeg"
+                        src="/ppf.jpg"
                         alt="Alexandros Soteriou"
                         fill
                         sizes="(max-width: 480px) 50px, (max-width: 768px) 60px, 100px"
@@ -101,6 +101,9 @@ export default function About({ className }: AboutProps) {
                     <div className={styles.profileTitleWrapper}>
                       <h2 className={styles.profileTitle}>
                         <span className={styles.profileTitleLine}>Alexandros</span>
+                        <span className={styles.profileTitleWordGap} aria-hidden="true">
+                          {' '}
+                        </span>
                         <span className={styles.profileTitleLine}>Soteriou</span>
                       </h2>
                       <p className={styles.profileSubtitle}>Full-Stack Developer & UI/UX Designer</p>
@@ -131,16 +134,26 @@ export default function About({ className }: AboutProps) {
                       aria-label="Open CV PDF in a new tab"
                     >
                       CV
-                      <svg
-                        className={styles.cvIcon}
-                        width={18}
-                        height={18}
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        aria-hidden
-                      >
-                        <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-                      </svg>
+                      <span className={styles.cvIconWrap} aria-hidden>
+                        <svg
+                          className={styles.cvIcon}
+                          width={18}
+                          height={18}
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                        </svg>
+                        <svg
+                          className={`${styles.cvIcon} ${styles.cvIconCopy}`}
+                          width={18}
+                          height={18}
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                        </svg>
+                      </span>
                     </a>
                   </div>
                 </div>
