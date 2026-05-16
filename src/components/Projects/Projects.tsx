@@ -6,6 +6,7 @@ interface ProjectProps {
   tech: string[];
   link?: string;
   github?: string;
+  wip?: boolean;
 }
 
 interface ProjectsProps {
@@ -30,15 +31,27 @@ const projects: ProjectProps[] = [
     description: "Landing page and base API connection for ECV — a digital twin company specializing in AR/VR 3D navigation and drone LiDAR systems. Built with Next.js and Tailwind CSS for modern, responsive design.",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "SEO", "API Integration"],
     link: "https://www.ecompvenience.com",
-    github: "https://github.com/username/coin-project"
+    github: "https://github.com/username/coin-project",
   },
   {
     title: "McQueen's Detailing",
     description: "Full e‑commerce car garage platform built with Astro, Express/Node.js and Stripe for secure checkout, product management, and order processing. Features comprehensive admin dashboard and inventory management.",
     tech: ["Astro", "Express", "Node.js", "Stripe", "TypeScript", "MongoDB", "Admin Dashboard"],
     link: "https://www.mcqueensdetailing.eu/",
-    github: "https://github.com/username/javascript-advanced"
-  }
+    github: "https://github.com/username/javascript-advanced",
+  },
+  {
+    title: "Shirtz",
+    description: "A modern apparel storefront and custom-printing experience built as a frontend showcase. Includes polished product browsing, responsive layout, and a lightweight deployment-ready UI.",
+    tech: ["React", "TypeScript", "CSS", "Responsive", "Ecommerce", "UX"],
+    link: "https://shirtz-nine.vercel.app/",
+  },
+  {
+    title: "Quadz Bike Rental",
+    description: "Work-in-progress concept for a bike rental platform with reservation flows, fleet browsing, and location-based discovery. The design system and frontend experience are currently being refined.",
+    tech: ["Next.js", "React", "UX", "Mobile-first", "Booking", "Maps"],
+    wip: true,
+  },
 ];
 
 export default function Projects({ className }: ProjectsProps) {
@@ -74,51 +87,63 @@ export default function Projects({ className }: ProjectsProps) {
         </div>
         
         <div className={styles.grid}>
-          {projects.map((project, index) => (
-            <div key={index} className={styles.card}>
-              <div className={styles.cardContent}>
-                <div className={styles.cardHeader}>
-                  <h3 className={styles.cardTitle}>{project.title}</h3>
-                  <div className={styles.techCarouselContainer}>
-                    <div className={styles.techCarousel}>
-                      <div className={styles.techCarouselTrack}>
-                        {/* First set of tech tags */}
-                        {project.tech.map((technology, techIndex) => (
-                          <span key={`${index}-${techIndex}-1`} className={styles.techTag}>
-                            {technology}
-                          </span>
-                        ))}
-                        {/* Duplicate set for seamless infinite scroll */}
-                        {project.tech.map((technology, techIndex) => (
-                          <span key={`${index}-${techIndex}-2`} className={styles.techTag}>
-                            {technology}
-                          </span>
-                        ))}
+          {projects.map((project, index) => {
+            const isWip = project.wip;
+
+            return (
+              <div key={index} className={`${styles.card} ${isWip ? styles.cardWip : ''}`}>
+                <div className={styles.cardContent}>
+                  <div className={styles.cardHeader}>
+                    <h3 className={styles.cardTitle}>{project.title}</h3>
+                    <div className={styles.techCarouselContainer}>
+                      <div className={styles.techCarousel}>
+                        <div className={styles.techCarouselTrack}>
+                          {/* First set of tech tags */}
+                          {project.tech.map((technology, techIndex) => (
+                            <span key={`${index}-${techIndex}-1`} className={styles.techTag}>
+                              {technology}
+                            </span>
+                          ))}
+                          {/* Duplicate set for seamless infinite scroll */}
+                          {project.tech.map((technology, techIndex) => (
+                            <span key={`${index}-${techIndex}-2`} className={styles.techTag}>
+                              {technology}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <p className={styles.cardDescription}>{project.description}</p>
-                
-                <div className={styles.metaRow}>
-                  <div className={styles.links}>
-                    {project.link && (
-                      <a 
-                        href={project.link} 
-                        className={styles.link}
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                      >
-                        <span>View Project</span>
-                        <ArrowIcon />
-                      </a>
-                    )}
+
+                  <p className={styles.cardDescription}>{project.description}</p>
+
+                  <div className={styles.metaRow}>
+                    <div className={styles.links}>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          className={styles.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span>View Project</span>
+                          <ArrowIcon />
+                        </a>
+                      )}
+
+                      {isWip && (
+                        <span className={styles.wipBadge}>Work in progress</span>
+                      )}
+                    </div>
                   </div>
                 </div>
+
+                {isWip && (
+                  <div className={styles.wipOverlay} />
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -38,6 +38,7 @@
 }
 
 .card {
+  position: relative;
   border: 1px solid var(--color-border);
   border-radius: 12px;
   overflow: hidden;
@@ -49,6 +50,36 @@
   flex-direction: column;
   gap: 1.5rem;
   height: 100%;
+}
+
+.wipOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.98;
+  pointer-events: none;
+}
+
+.wipBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--color-muted);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .cardHeader {
